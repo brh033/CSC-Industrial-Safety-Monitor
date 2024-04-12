@@ -1,0 +1,7 @@
+Week of 4-8-24 to 4-12-24
+
+4-10-24: found a library (dearpygui) to use for our GUI
+
+4-11-24: played around with dpg to learn it
+
+4-12-24: decided against dpg and i began exploring matplotlib and plotly
