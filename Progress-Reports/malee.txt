@@ -24,3 +24,12 @@ Week of 4-22-24 to 4-26-24
 
 4-25-24: brainstormed ideas for our board we're using to present
 
+4-26-24: worked on code for the Geiger counter board to communicate
+    with the raspberry pi display 
+
+------------------------------
+Week of 4-29-24 to 5-3-24
+------------------------------
+
+4-28-24: worked on gui and input from gpio pins
+
