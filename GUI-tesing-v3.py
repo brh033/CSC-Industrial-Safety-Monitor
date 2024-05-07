@@ -11,8 +11,8 @@ data_source = ColumnDataSource(data = {"close": [], "DateTime": []})
 
 # create the line chart
 fig = figure(x_axis_type="datetime",
-             plot_wdith=900, plot_height=450,
-             title="Radioactivity (every 10 seconds)")
+             plot_width=900, plot_height=450,
+             title=" __ (every 10 seconds)")
 
 fig.line(x="DateTime", y="cpm", line_color="tomato",
          line_width=3.0, source=data_source)
@@ -25,7 +25,7 @@ def update_chart():
     global data_source
     resp = requests.get()
     hist_data = resp.json()
-    new_row = {"Radioactivity": [hist_data["cpm"],], "DateTime": [datetime.now(),]}
+    new_row = {" ": [hist_data["cpm"],], "DateTime": [datetime.now(),]}
     data_source.stream(new_row)
 
 # # update the stream data
