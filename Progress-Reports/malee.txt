@@ -39,3 +39,8 @@ Week of 5-5-24 to 5-9-24
 
 5-5-24: continued work on gui
 
+5-7-24: worked on radiation sensor, the serial output and gui
+
+5-8-24: made a powerpoint for the in class presentation and worked on gui
+
+5-9-24: presentation day!

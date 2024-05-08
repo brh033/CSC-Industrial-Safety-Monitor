@@ -1,5 +1,10 @@
 from tkinter import *
+import tkinter as tk
 import tk_tools
+import RPi as GPIO
+
+# Initialize communication with RPi
+RPi.init()
 
 class MainGUI(Frame):
     def __init__(self,parent):
@@ -15,22 +20,30 @@ class MainGUI(Frame):
             sticky = E+W+N+S)
         self.pack(fill=BOTH, expand=1)
 
-        p1 = tk_tools.RotaryScale(max_value=210, unit='cpm')
+        root = tk.Tk()
+
+        p1 = tk_tools.RotaryScale(root, max_value=210, unit='cpm')
         p1.grid(row=1,column=0,sticky=N+S+E+W)
 
-        p2 = tk_tools.RotaryScale(max_value=210, unit='cpm')
+        p2 = tk_tools.RotaryScale(root, max_value=210, unit='cpm')
         p2.grid(row=1,column=1,sticky=N+S+E+W)
 
-        p3 = tk_tools.RotaryScale(max_value=210, unit='cpm')
+        p3 = tk_tools.RotaryScale(root, max_value=210, unit='cpm')
         p3.grid(row=2,column=0,sticky=N+S+E+W)
 
-        p4 = tk_tools.RotaryScale(max_value=210, unit='cpm')
+        p4 = tk_tools.RotaryScale(root, max_value=210, unit='cpm')
         p4.grid(row=2,column=1,sticky=N+S+E+W)
 
     def update_gauge(self):
+        # get input from RPi
+        
+
         global p, count
+        count = 30.0
+        p.set_value(count)
         count += 1.0 
         p.set_value(count)
+
         # send to RPi
         # window.after(50, update_gauge)
 
@@ -40,14 +53,9 @@ class MainGUI(Frame):
         except:
             self.display["text"] = "ERROR"
 
-    # count = 30.0
-    # p1.set_value(count)
-
-    # window.after(50, update_gauge)
-
 ###########################################
 window = Tk()
+# window.after(50, update_gauge)
 window.title("Sense All")
-p = MainGUI(window)
+MainGUI(window)
 window.mainloop()
-
