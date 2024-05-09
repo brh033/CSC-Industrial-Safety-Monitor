@@ -29,4 +29,5 @@ def update_gauge():
     root.after(50, update_gauge)
 
 root.after(50, update_gauge)
+root.title("Guardian Sense-All")
 root.mainloop()
